@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.jumbotron3 ul,
+.serv {
+  list-style: circle;
+}
+
+.serv li {
+  margin: 10px 0 10px 0;
+}
