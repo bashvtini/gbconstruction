@@ -42,8 +42,8 @@ body {
   border-radius: 10px;
   z-index: 10;
   background-color: white;
-  width: 500px;
-  max-width: 70%;
+  width: 400px;
+  max-width: 80%;
 }
 
 .modal.active {

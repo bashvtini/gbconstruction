@@ -39,7 +39,7 @@ const Gallery = (length, url) => {
       openModal(modal);
       const image = document.createElement("img");
       image.setAttribute("src", `${url}${i}.jpeg`);
-      image.classList.add("p-10");
+      image.classList.add("p-5");
       modal.innerHTML = "";
       modal.appendChild(image);
     };
