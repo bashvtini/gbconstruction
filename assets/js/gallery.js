@@ -1,22 +1,4 @@
-// Modal
-
-// Get the modal
-const modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-const btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-const span = document.getElementsByClassName("close")[0];
-
-const modalContent = document.querySelector(".modal-content");
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
+const overlay = document.querySelector("#overlay");
 
 const data = {
   bath: {
@@ -53,16 +35,31 @@ const Gallery = (length, url) => {
     li.classList.add("m-2", "bc");
     li.style = `background-image: url(${url}${i}.jpeg);`;
     li.onclick = function() {
-      modal.style.display = "block";
+      const modal = document.querySelector("#modal");
+      openModal(modal);
       const image = document.createElement("img");
-      const wrapper = document.createElement("div");
       image.setAttribute("src", `${url}${i}.jpeg`);
-      wrapper.classList.add("mx-auto", "my-5", "w-5/6", "md:w-1/3");
+      image.classList.add("p-10");
       modal.innerHTML = "";
-      wrapper.appendChild(image);
-      modal.appendChild(wrapper);
+      modal.appendChild(image);
     };
     div.appendChild(li);
     gallery.appendChild(div);
   }
+};
+
+overlay.addEventListener("click", () => {
+  closeModal();
+});
+
+const openModal = modal => {
+  if (modal == null) return;
+  modal.classList.add("active");
+  overlay.classList.add("active");
+};
+
+const closeModal = () => {
+  if (modal == null) return;
+  modal.classList.remove("active");
+  overlay.classList.remove("active");
 };
